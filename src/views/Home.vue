@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     deleteTodo(id) {
-        axios.delete(`http://127.0.0.1:9000/todos/todolist/${id}`)
+        axios.delete(`http://ccreyes.pythonanywhere.com/todos/todolist/${id}`)
 
           .then(this.todos = this.todos.filter(todo => todo.id!== id))
           .catch(err => console.log(err))
@@ -33,7 +33,7 @@ export default {
     addTodo(newTodo) {
       const { title, completed } = newTodo;
 
-      axios.post('http://127.0.0.1:9000/todos/todolist/', {
+      axios.post('http://ccreyes.pythonanywhere.com/todos/todolist/', {
         title,
         completed
       })
@@ -45,7 +45,7 @@ export default {
   },
   created() {
     axios
-      .get('http://127.0.0.1:9000/todos/todolist/')
+      .get('http://ccreyes.pythonanywhere.com/todos/todolist/')
       .then(res => console.log(res.data.objects))
       .catch(err => console.log(err));
   }
